@@ -1,0 +1,39 @@
+﻿@model AuthProject.Models.Users
+
+<h2>Register</h2>
+<head>
+    <style>
+        .form-control {
+            width: 40%;
+            margin: 10px 0;
+        }
+        .form-check-input {
+            margin-top: 10px;
+        }
+        .btn-primary {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<form method="post" asp-action="Register" >
+    <div class="form-group">
+        <label for="UserName" asp-for="UserName"> UserName</label>
+        <input  asp-for="UserName" type="Text" class="form-control" id="user" aria-describedby="user" placeholder="Enter username" name="username" >
+
+    </div>
+
+    <div class="form-group">
+        <label for="exampleInputEmail1" asp-for="Email"> Email address</label>
+        <input type="email" class="form-control" id="exampleInputEmail1" asp-for="Email" aria-describedby="emailHelp" placeholder="Enter email" name="Email">
+
+    </div>
+    <div class="form-group">
+        <label for="exampleInputPassword1" asp-for="Password"> Password</label>
+        <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password" name="password" asp-for="Password">
+    </div>
+    <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="exampleCheck1" name="isAdmin" value=true asp-for="IsAdmin">
+        <label class="form-check-label" for="exampleCheck1" asp-for="IsAdmin"> Admin</label>
+    </div>
+    <button type="submit" class="btn btn-primary" value="Create"> Submit</button>
+</form>
